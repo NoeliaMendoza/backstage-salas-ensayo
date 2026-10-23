@@ -447,7 +447,7 @@ Son etapas diferentes del desarrollo. La ejecución actual no debe presentarse c
 
 Para una demostración manual, capturar las pruebas, el arranque con el perfil elegido, una reserva `201`, validación `400`, pase inválido `401`, recurso inexistente `404` y límite diario `409`. Mostrar también la cancelación y el método de prueba del DTO. Los ejemplos del README no sustituyen capturas de ejecución real.
 
-El proyecto se desarrolló con asistencia de IA para generación de código, propuestas de mejora, pruebas y documentación. La revisión, explicación del código y declaración de contribuciones personales corresponden a quien presenta el trabajo. Este README está en español; el informe y el video de la actividad de análisis se preparan en inglés según sus instrucciones.
+Este README está en español; el informe y el video de la actividad de análisis se preparan en inglés según sus instrucciones.
 
 ## Solución de problemas
 
