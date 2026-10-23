@@ -1,0 +1,21 @@
+﻿-------------------------------------------------------------------------------
+Test set: org.example.actividad.ActividadApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.76 s -- in org.example.actividad.ActividadApplicationTests
+-------------------------------------------------------------------------------
+Test set: org.example.actividad.BackstageIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.441 s -- in org.example.actividad.BackstageIntegrationTests
+2026-10-22T23:26:13.689-05:00  INFO 8988 --- [Backstage] [           main] o.e.actividad.aop.LoggingServicioAspect  : Servicio ReservaService.crear(..): 1 ms
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.441 s -- in org.example.actividad.BackstageIntegrationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  58.727 s
+[INFO] Finished at: 2026-10-22T23:26:14-05:00
+[INFO] ------------------------------------------------------------------------

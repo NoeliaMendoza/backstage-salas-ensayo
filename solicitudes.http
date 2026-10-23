@@ -1,0 +1,96 @@
+@base = http://localhost:8080
+@pase = ROCK-LOCAL-2027
+
+### 1. Cartelera pública
+GET {{base}}/public/cartelera
+
+### 2. Registrar banda. Copiar su id en bandaId.
+POST {{base}}/api/bandas
+Content-Type: application/json
+X-Backstage-Pass: {{pase}}
+
+{
+  "codigo": "BAND-2048",
+  "nombre": "Los Acordes Perdidos",
+  "generoMusical": "Rock",
+  "correoRepresentante": "acordes@example.com",
+  "numeroIntegrantes": 4
+}
+
+### 3. Registrar sala. Copiar su id en salaId.
+POST {{base}}/api/salas
+Content-Type: application/json
+X-Backstage-Pass: {{pase}}
+
+{
+  "nombre": "Escenario Violeta",
+  "capacidad": 6,
+  "tarifaHora": 12.50,
+  "descripcionEquipo": "Batería, dos amplificadores y tres micrófonos"
+}
+
+### 4. Consulta pública
+GET {{base}}/api/salas
+
+### Reemplazar estos identificadores con los devueltos por la API.
+@bandaId = 00000000-0000-0000-0000-000000000001
+@salaId = 00000000-0000-0000-0000-000000000002
+@reservaId = 00000000-0000-0000-0000-000000000003
+@fecha = 2027-05-20
+
+### 5. Reservar cuatro horas (usar una fecha futura).
+POST {{base}}/api/reservas
+Content-Type: application/json
+X-Backstage-Pass: {{pase}}
+
+{
+  "bandaId": "{{bandaId}}",
+  "salaId": "{{salaId}}",
+  "fecha": "{{fecha}}",
+  "horaInicio": "10:00:00",
+  "duracionHoras": 4
+}
+
+### 6. Intentar tres horas adicionales: debe devolver 409 por límite diario.
+POST {{base}}/api/reservas
+Content-Type: application/json
+X-Backstage-Pass: {{pase}}
+
+{
+  "bandaId": "{{bandaId}}",
+  "salaId": "{{salaId}}",
+  "fecha": "{{fecha}}",
+  "horaInicio": "14:00:00",
+  "duracionHoras": 3
+}
+
+### 7. Consultar reserva
+GET {{base}}/api/reservas/{{reservaId}}
+X-Backstage-Pass: {{pase}}
+
+### 8. Consultar reservas de la banda
+GET {{base}}/api/bandas/{{bandaId}}/reservas?fecha={{fecha}}
+X-Backstage-Pass: {{pase}}
+
+### 9. Cancelar y liberar horas
+PATCH {{base}}/api/reservas/{{reservaId}}/cancelacion
+X-Backstage-Pass: {{pase}}
+
+### 10. Sin pase: debe devolver 401
+POST {{base}}/api/salas
+Content-Type: application/json
+
+{}
+
+### 11. Validación personalizada: debe devolver 400
+POST {{base}}/api/bandas
+Content-Type: application/json
+X-Backstage-Pass: {{pase}}
+
+{
+  "codigo": "ROCK-1234",
+  "nombre": "Banda Desafinada",
+  "generoMusical": "Rock",
+  "correoRepresentante": "banda@example.com",
+  "numeroIntegrantes": 4
+}

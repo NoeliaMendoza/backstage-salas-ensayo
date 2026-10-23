@@ -1,0 +1,29 @@
+﻿-------------------------------------------------------------------------------
+Test set: org.example.actividad.ActividadApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 34.43 s -- in org.example.actividad.ActividadApplicationTests
+-------------------------------------------------------------------------------
+Test set: org.example.actividad.BackstageIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.70 s -- in org.example.actividad.BackstageIntegrationTests
+-------------------------------------------------------------------------------
+Test set: org.example.actividad.H2IntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.48 s -- in org.example.actividad.H2IntegrationTests
+-------------------------------------------------------------------------------
+Test set: org.example.actividad.H2PersistenceTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.002 s -- in org.example.actividad.H2PersistenceTests
+2026-10-22T23:42:03.335-05:00 DEBUG 22272 --- [Backstage] [           main] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT accion,fecha FROM auditoria ORDER BY id]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.002 s -- in org.example.actividad.H2PersistenceTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:10 min
+[INFO] Finished at: 2026-10-22T23:42:04-05:00
+[INFO] ------------------------------------------------------------------------
